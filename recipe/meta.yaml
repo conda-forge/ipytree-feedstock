@@ -1,6 +1,6 @@
 {% set name = "ipytree" %}
-{% set version = "0.1.1" %}
-{% set sha256 = "dbee2f37af813338c59db79f2050f6b082b983d7d58041e092fa69d5580f4ef8" %}
+{% set version = "0.1.2" %}
+{% set sha256 = "aa952f6892cb9306085394835f6484ca4ed0e10ae071f04ea022213d14ec9495" %}
 
 package:
   name: {{ name|lower }}
