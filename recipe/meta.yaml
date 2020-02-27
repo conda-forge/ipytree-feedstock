@@ -1,6 +1,6 @@
 {% set name = "ipytree" %}
-{% set version = "0.1.5" %}
-{% set sha256 = "ed16577c1b74d6ea43724a39efaacce9679876da32cfedef8cec5fe6b934a933" %}
+{% set version = "0.1.6" %}
+{% set sha256 = "89c490a9b854b4bd073cc60392acafa806fe51fbedffcd5e6e1dc69443483eed" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -33,7 +33,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'A Jupyter Notebook Tree Widget using jsTree'
+  summary: A Jupyter Notebook Tree Widget using jsTree
   dev_url: https://github.com/QuantStack/ipytree
 
 extra:
