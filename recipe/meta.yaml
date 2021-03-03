@@ -1,6 +1,6 @@
 {% set name = "ipytree" %}
-{% set version = "0.1.8" %}
-{% set sha256 = "364e1927e5ea7bb3392fc79e69cdc11e36e24904abb5b6c3ed19ef4121843421" %}
+{% set version = "0.2.1" %}
+{% set sha256 = "52a87c411716ee2fc0aaafa846ec2522dde0c821c3efe372044551a2fa24466b" %}
 
 package:
   name: {{ name|lower }}
@@ -17,12 +17,13 @@ build:
 
 requirements:
   host:
-    - python
+    - python  >=3.6
     - setuptools
+    - jupyter-packaging
     - pip
   run:
-    - python
-    - ipywidgets >=7.5.0,<8.0.0
+    - python  >=3.6
+    - ipywidgets >=7.6.0,<8.0.0
 
 test:
   imports:
