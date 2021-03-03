@@ -1,0 +1,26 @@
+From 81e125e61c259aed3a09d396f83fd0d1cee833cf Mon Sep 17 00:00:00 2001
+From: martinRenou <martin.renou@gmail.com>
+Date: Wed, 3 Mar 2021 12:07:56 +0100
+Subject: [PATCH] Remove prepublish script
+
+---
+ js/package.json | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/js/package.json b/js/package.json
+index 29106fd..836f17d 100644
+--- a/js/package.json
++++ b/js/package.json
+@@ -24,8 +24,7 @@
+   "scripts": {
+     "build": "webpack && npm run build:labextension",
+     "build:labextension": "jupyter labextension build .",
+-    "clean": "rimraf dist/ && rimraf ../ipytree/labextension/ && rimraf ../ipytree/nbextension",
+-    "prepublish": "npm run clean && npm run build"
++    "clean": "rimraf dist/ && rimraf ../ipytree/labextension/ && rimraf ../ipytree/nbextension"
+   },
+   "devDependencies": {
+     "@jupyterlab/builder": "^3.0.0",
+-- 
+2.29.2
+
