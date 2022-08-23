@@ -28,6 +28,13 @@ requirements:
 test:
   imports:
     - ipytree
+  commands:
+    - test -f ${PREFIX}/share/jupyter/nbextensions/{{ name }}/extension.js                             # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/{{ name }}/index.js                                 # [unix]
+    - test -f ${PREFIX}/share/jupyter/labextensions/{{ name }}/package.json                            # [unix]
+    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\{{ name }}\\extension.js (exit 1)           # [win]
+    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\{{ name }}\\index.js (exit 1)               # [win]
+    - if not exist %PREFIX%\\share\\jupyter\\labextensions\\{{ name }}\\package.json (exit 1)          # [win]
 
 about:
   home: http://github.com/QuantStack/ipytree
