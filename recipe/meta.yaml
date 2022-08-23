@@ -1,6 +1,6 @@
 {% set name = "ipytree" %}
-{% set version = "0.2.1" %}
-{% set sha256 = "52a87c411716ee2fc0aaafa846ec2522dde0c821c3efe372044551a2fa24466b" %}
+{% set version = "0.2.2" %}
+{% set sha256 = "d53d739bbaaa45415733cd06e0dc420a2af3d173438617db472a517bc7a61e56" %}
 
 package:
   name: {{ name|lower }}
@@ -23,11 +23,18 @@ requirements:
     - pip
   run:
     - python  >=3.6
-    - ipywidgets >=7.6.0,<8.0.0
+    - ipywidgets >=7.6.0,<9
 
 test:
   imports:
     - ipytree
+  commands:
+    - test -f ${PREFIX}/share/jupyter/nbextensions/{{ name }}/extension.js                             # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/{{ name }}/index.js                                 # [unix]
+    - test -f ${PREFIX}/share/jupyter/labextensions/{{ name }}/package.json                            # [unix]
+    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\{{ name }}\\extension.js (exit 1)           # [win]
+    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\{{ name }}\\index.js (exit 1)               # [win]
+    - if not exist %PREFIX%\\share\\jupyter\\labextensions\\{{ name }}\\package.json (exit 1)          # [win]
 
 about:
   home: http://github.com/QuantStack/ipytree
